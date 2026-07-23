@@ -1,10 +1,10 @@
 const dotenv=require("dotenv");
 dotenv.config();
-const cors = require('cors');
-app.use(cors());
+
 const mongoose= require("mongoose");
 
 const express = require('express');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -22,6 +22,7 @@ const PORT = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors())
 app.use(express.static(__dirname+'/dist'));
 
 const flowerSchema = new mongoose.Schema({
