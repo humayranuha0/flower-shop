@@ -5,13 +5,13 @@ import React, { useState,useEffect } from "react";
 const AdminDashboard=({ setView,setIsAdmin})=>{
     const [orders,setOrders]=useState([]);
     useEffect(()=>{
-        fetch("http://localhost:3000/api/orders")
+        fetch(`${import.meta.env.VITE_API_URL}/api/orders`)
         .then(res=>res.json())
         .then(data=>setOrders(data))
         .catch((err)=>console.log(err));
     },[]);
     const handleCompletedOrder=(id)=>{
-        fetch(`/api/orders/${id}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/api/orders/${id}`, {
     method: 'DELETE',
   })
   .then((res)=>res.json())

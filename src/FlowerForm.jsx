@@ -9,7 +9,7 @@ const[img,setImg]=useState("flower1");
 const handleSubmit=(e)=>{
     e.preventDefault();
     const newFlowerData={name,price,img};
-    fetch("/api/flowers",{
+    fetch(`${import.meta.env.VITE_API_URL}/api/flowers`,{
         method:"POST",
         headers:{ 'Content-Type': 'application/json' },
         body:JSON.stringify(newFlowerData)

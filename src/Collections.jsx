@@ -19,7 +19,7 @@ function Collections({flowers, setFlowers, cart, setCart,addToCart,isAdmin}){
 const handleDelete=async(id)=>{
 if(window.confirm("Are you sure about delete this card"))
   try{
-const response=await fetch(`http://localhost:3000/api/flowers/${id}`,{
+const response=await fetch(`${import.meta.env.VITE_API_URL}/api/flowers/${id}`,{
   method:"DELETE"
 });
 if(response.ok){

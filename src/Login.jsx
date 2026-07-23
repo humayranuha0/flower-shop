@@ -12,7 +12,7 @@ const handleLogin =(e)=>{
     e.preventDefault();
     setError('');
 
-fetch("/api/admin/login",{
+fetch(`${import.meta.env.VITE_API_URL}/api/admin/login`,{
     method:"POST",
    headers: {
         'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ const FlowerCard=(()=>{
 const [flowers,setFlower]=useState([]);
 
 useEffect(()=>{
-    fetch("/api/flowers")
+    fetch("https://your-backend-api.onrender.com/api/flowers")
     .then(res=>res.json())
     .then(data=>setFlower(data))
     .catch((err)=>console.log(err));
