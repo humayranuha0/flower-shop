@@ -1,5 +1,7 @@
 const dotenv=require("dotenv");
 dotenv.config();
+const cors = require('cors');
+app.use(cors());
 const mongoose= require("mongoose");
 
 const express = require('express');
@@ -68,7 +70,7 @@ createDefaultAdmin();
 
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/dist/index.html');
+    res.send('Flower Shop API Server is running...');
 });
 
 
