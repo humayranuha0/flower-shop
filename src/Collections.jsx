@@ -37,7 +37,7 @@ console.log(err);
 
 
 useEffect(() => {
-  fetch('/api/flowers')
+  fetch(`${import.meta.env.VITE_API_URL}/api/flowers`)
     .then(res => res.json())
     .then(data => setFlowers(data))
     .catch(err => console.error("Something went wrong:", err));
